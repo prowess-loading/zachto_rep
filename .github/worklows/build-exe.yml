@@ -1,0 +1,49 @@
+name: Build .exe for Windows
+
+on:
+  push:
+    branches:
+      - master # Trigger action on push to the master branch
+  pull_request:
+    branches:
+      - master # Trigger action on pull requests to the master branch
+
+jobs:
+  build:
+    runs-on: windows-latest # Use the latest Windows runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2 # Check out the repository code
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11 # Set Python version for the build
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip  # Use python instead of python3
+          pip install -r requirements.txt  # Install any dependencies in requirements.txt
+          pip install pyinstaller  # Install pyinstaller for creating the .exe
+
+      - name: Build the .exe file
+        run: |
+          # Determine the correct add-data separator for the current OS
+          if [[ "$RUNNER_OS" == "Windows" ]]; then
+            ADD_DATA_SEPARATOR=";"
+          else
+            ADD_DATA_SEPARATOR=":"
+          fi
+
+          pyinstaller --onefile \
+                       --add-data "data${ADD_DATA_SEPARATOR}data" \
+                       --add-data "pages${ADD_DATA_SEPARATOR}pages" \
+                       --add-data "setup${ADD_DATA_SEPARATOR}setup" \
+                       run_term.py  # Build the .exe with the necessary files
+
+      - name: Upload .exe as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: zachto_built-exe
+          path: dist/*
