@@ -1,0 +1,52 @@
+{
+    "iPhone 13 Pro": {
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1",
+      "deviceMetrics": {
+        "width": 390,
+        "height": 844,
+        "pixelRatio": 3.0,
+        "touch": true,
+        "isiOS": true
+      }
+    },
+    "Samsung Galaxy S21 Ultra": {
+      "userAgent": "Mozilla/5.0 (Linux; Android 11; SM-G998B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Mobile Safari/537.36",
+      "deviceMetrics": {
+        "width": 412,
+        "height": 915,
+        "pixelRatio": 3.5,
+        "touch": true,
+        "isiOS": false
+      }
+    },
+    "Google Pixel 5": {
+      "userAgent": "Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.105 Mobile Safari/537.36",
+      "deviceMetrics": {
+        "width": 393,
+        "height": 851,
+        "pixelRatio": 2.8,
+        "touch": true,
+        "isiOS": false
+      }
+    },
+    "iPhone SE (2nd Generation)": {
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1",
+      "deviceMetrics": {
+        "width": 375,
+        "height": 667,
+        "pixelRatio": 2.0,
+        "touch": true,
+        "isiOS": true
+      }
+    },
+    "OnePlus 8 Pro": {
+      "userAgent": "Mozilla/5.0 (Linux; Android 10; IN2023) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.152 Mobile Safari/537.36",
+      "deviceMetrics": {
+        "width": 412,
+        "height": 869,
+        "pixelRatio": 3.0,
+        "touch": true,
+        "isiOS": false
+      }
+    }
+  }

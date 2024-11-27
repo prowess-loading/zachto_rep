@@ -1,0 +1,33 @@
+{
+  "MainPage": "https://sub01.zachto.xyz/",
+  "Pages": {
+    "AboutUs": "/aboutus.php",
+    "ContactUs": "/contactus.php",
+    "Disclaimer": "/disclaimer.php",
+    "PrivacyAndCookies": "/privacypolicy.php"
+  },
+  "Calculators": {
+    "LoanCalculator": "/finance/loan-calculator.php",
+    "BoatLoanCalculator": "/finance/boat-loan-calculator.php",
+    "LoanPayoffCalculator": "/finance/loan-payoff-calculator.php",
+    "CarLoanCalculator": "/finance/car-loan-calculator.php",
+    "CompoundInterestCalculator": "/finance/compound-interest-calculator.php",
+    "ForexCompoundingCalculator": "/finance/forex-compounding-calculator.php",
+    "CAGRCalculator": "/finance/cagr-calculator.php",
+    "AmortizationCalculator": "/finance/amortization-calculator.php",
+    "CurrencyConverter": "/finance/currency-converter.php",
+    "MillionToBillionConverter": "/finance/million-to-billion-converter.php",
+    "IRRCalculator": "/finance/irr-calculator.php",
+    "MarginCalculator": "/finance/margin-calculator.php",
+    "SIPCalculator": "/finance/sip-calculator.php",
+    "SimpleInterestCalculator": "/finance/simple-interest-calculator.php",
+    "PricePerSquareFeetCalculator": "/finance/price-per-squarefoot-calculator.php",
+    "HourlyToSalaryCalculator": "/finance/hourly-to-salary-calculator.php",
+    "SavingsCalculator": "/finance/savings-calculator.php",
+    "MortgageCalculator": "/finance/mortgage-calculator.php",
+    "APYCalculator": "/finance/apy-calculator.php",
+    "CreditCardCalculator": "/finance/credit-card-payment-calculators.php",
+    "SalaryToHourlyCalculator": "/finance/salary-to-hourly-calculator.php"
+    }
+  }
+  

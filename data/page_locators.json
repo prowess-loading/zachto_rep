@@ -1,0 +1,32 @@
+{
+  "Pages": {
+    "AboutUs": "//section[@id='footer-section']//a[text()='About Us']",
+    "ContactUs": "//section[@id='footer-section']//a[text()='Contact Us']",
+    "Disclaimer": "//a[text()='Disclaimer']",
+    "PrivacyAndCookies": "//a[text()='Privacy & Cookie']"
+  },
+  "Calculators": {
+    "LoanCalculator": ".cardbox[onclick*='/finance/loan-calculator.php']",
+    "BoatLoanCalculator": ".cardbox[onclick*='/finance/boat-loan-calculator.php']",
+    "LoanPayoffCalculator": ".cardbox[onclick*='/finance/loan-payoff-calculator.php']",
+    "CarLoanCalculator": ".cardbox[onclick*='/finance/car-loan-calculator.php']",
+    "CompoundInterestCalculator": ".cardbox[onclick*='/finance/compound-interest-calculator.php']",
+    "ForexCompoundingCalculator": ".cardbox[onclick*='/finance/forex-compounding-calculator.php']",
+    "CAGRCalculator": ".cardbox[onclick*='/finance/cagr-calculator.php']",
+    "AmortizationCalculator": ".cardbox[onclick*='/finance/amortization-calculator.php']",
+    "CurrencyConverter": ".cardbox[onclick*='/finance/currency-converter.php']",
+    "MillionToBillionConverter": ".cardbox[onclick*='/finance/million-to-billion-converter.php']",
+    "IRRCalculator": ".cardbox[onclick*='/finance/irr-calculator.php']",
+    "MarginCalculator": ".cardbox[onclick*='/finance/margin-calculator.php']",
+    "SIPCalculator": ".cardbox[onclick*='/finance/sip-calculator.php']",
+    "SimpleInterestCalculator": ".cardbox[onclick*='/finance/simple-interest-calculator.php']",
+    "PricePerSquareFeetCalculator": ".cardbox[onclick*='/finance/price-per-squarefoot-calculator.php']",
+    "HourlySalaryCalculator": ".cardbox[onclick*='/finance/hourly-to-salary-calculator.php']",
+    "SavingsCalculator": ".cardbox[onclick*='/finance/savings-calculator.php']",
+    "MortgageCalculator": ".cardbox[onclick*='/finance/mortgage-calculator.php']",
+    "APYCalculator": ".cardbox[onclick*='/finance/apy-calculator.php']",
+    "CreditCardCalculator": ".cardbox[onclick*='/finance/credit-card-calculator.php']",
+    "MoneyCounter": ".cardbox[onclick*='/finance/money-counter.php']",
+    "SalaryToHourlyCalculator": ".cardbox[onclick*='/finance/salary-to-hourly-calculator.php']"
+}
+}

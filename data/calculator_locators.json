@@ -1,0 +1,160 @@
+{
+    "Common": {
+        "CurrencyIcons": [
+            { "currency": "EUR", "locator": "label[for='btnradio1']" },
+            { "currency": "USD", "locator": "label[for='btnradio2']" },
+            { "currency": "GBP", "locator": "label[for='btnradio3']" },
+            { "currency": "JPY", "locator": "label[for='btnradio4']" },
+            { "currency": "INR", "locator": "label[for='btnradio5']" }
+        ]
+    },
+    "SharedLocators": {
+        "LoanFields": {
+            "LoanAmount": "input#loanamount",
+            "InterestRate": "input#interestrate",
+            "rate": "input#rate",
+            "Years": "input#timeyear",
+            "Months": "input#timemonth",
+            "LoanStart": "input#startdate",
+            "LoanSummaryTable": "label[for='tableradio']",
+            "LoanSummaryChart": "label[for='chartradio']",
+            "YearlyBreakdown": "label[for='yearradio']",
+            "MonthlyBreakdown": "label[for='monthradio']",
+            "Principal": "input#principal",
+            "NoOfMonth": "h3.textresult#rtotalpayments",
+            "CalculateButton": "button.btn.btn-success[onclick='calculateLoan()']"            
+        }
+    },
+    "LoanCalculator": { "Shared": "LoanFields" },  
+    "BoatLoanCalculator": { "Shared": "LoanFields" },
+    "AmortizationCalculator": { "Shared": "LoanFields" },
+    
+    
+    "LoanPayoffCalculator": {
+        "LoanBalance": "input#loanbalance",
+        "addition": "input#monthlypaymentadd"
+    },
+    "CarLoanCalculator": {
+        "Shared": "LoanFields",
+        "NewField": {
+            "CarValue": "input#carprice",
+            "downpayment": "input#downpayment",
+            "pieChart": "canvas#piechart"
+        }
+    },
+    "CompoundInterestCalculator": {
+        "Shared": "LoanFields",
+        "NewField": {
+            "compoundFreq": "select#compoundFreq",
+            "RoR": "h3.textresult#ralltimereturnrate",
+            "CalculateInterest": "button.btn.btn-success[onclick='calculateInterest()']" 
+         }
+    },
+    "ForexCompoundingCalculator": {
+        "Shared": "LoanFields",
+        "NewField": {
+            "initialAmount": "input#initialamount",
+            "return": "input#monthlyreturn",
+            "TotalEarning": "h3.textresult#rtotalearning",
+            "CalculateCompound": "button.btn.btn-success[onclick='calculatecompoundedamount()']" 
+        }
+    },
+    "CAGRCalculator": {
+        "initialValue": "input#initialValue",
+        "finalValue": "input#finalValue",
+        "years": "input#years",
+        "months": "input#months",
+        "days": "input#days",
+        "CalculateCAGR": "button.btn.btn-success[onclick='calculateCAGR()']"
+    },
+    "CurrencyConverter": {
+        "amount": "input#amount",
+        "from": "select#from" ,
+        "to": "select#to",
+        "ConvertBtn": "button.btn.btn-success[onclick='convertcurrency()']"
+    },
+    "MillionToBillionConverter": {
+        "amount": "input#amountInput",
+        "unit": "select#unitSelector",
+        "ConvertBtn": "button.btn.btn-success[onclick='convertunit()']"
+    },
+    "IRRCalculator": {
+        "initialAmount": "input#initialamount",
+        "cashFlow": "input#cashflow",
+        "CalculateIRR": "button.btn.btn-success[onclick='calculateIRR()']"
+    },
+    "MarginCalculator": {
+        "cost": "input#cost",
+        "revenue": "input#revenue",
+        "CalculateTypeWise": "button.btn.btn-success[onclick='calculatetypewise()']"
+    },
+    "SIPCalculator": {
+        "Shared": "LoanFields",
+        "NewField": {
+            "investmentAmount": "input#investmentAmount",
+            "investmentFrequency":  "select#investmentFrequency",
+            "interestRate": "input#interestRate",
+            "CalculateSIP": "button.btn.btn-success[onclick='calculatesip()']",
+            "WealthGain": "h3.textresult#rwealthgain"
+            }
+    },
+    "SimpleInterestCalculator": {
+        "Shared": "LoanFields",
+        "NewField": {
+            "Rate": "input#rate",
+            "Weeks": "input#timeweek",
+            "Days": "input#timeday"
+        }
+    },
+    "PricePerSquareFeetCalculator": {
+        "totalPrice": "input#totalprice",
+        "totalarea": "input#totalarea",
+        "areaUnit":  "select#areaUnit",
+        "CalculateArea": "button.btn.btn-success[onclick='calculaterpriceperunit()']"
+    },
+    "HourlySalaryCalculator": {
+        "hourlyamount": "input#hourlyamount",
+        "hoursPerWeek": "input#hourperweek",
+        "weeksPerYear": "input#weekperyear",
+        "CalculateSalary": "button.btn.btn-success[onclick='calculatesalary()']"
+    },
+    "SavingsCalculator": {
+        "Shared": "LoanFields",
+        "NewField": {
+            "initialDeposit": "input#initialDeposit",
+            "interestRate": "input#interestRate",
+            "interestFreq": "select#interestRateFrequency",
+            "CalculateSavings": "button.btn.btn-success[onclick='calculatesaving()']"
+        }
+    },
+    "MortgageCalculator": { 
+        "Shared": "LoanFields" ,
+        "NewField": {
+            "loanAmount": "input#loanAmount",
+            "interestRate": "input#interestRate",
+            "CalculateMortgage": "button.btn.btn-success[onclick='calculatemortgage()']"
+        }
+    },
+    "APYCalculator": {
+        "Shared": "LoanFields",
+        "NewField": {
+            "apypercent": "input#apypercent",
+            "CalculateAPY": "button.btn.btn-success[onclick='calculateapy()']"
+        }
+    },
+    "CreditCardCalculator": {
+        "Shared": "LoanFields",
+        "NewField": {
+            "interest": "input#interest",
+            "paymonths": "input#paymonths",
+            "CalculateCCRepayment": "button.btn.btn-success[onclick='calculatecreditcardrepayment()']"
+        }
+    },
+    "SalaryToHourlyCalculator": {
+        "salaryFrequency": "select#salaryFrequency",
+        "salaryamount": "input#salaryamount",
+        "hoursPerWeek": "input#hourperweek",
+        "weeksPerYear": "input#weekperyear",
+        "CalculateSalary": "button.btn.btn-success[onclick='calculatesalary()']"
+    }
+}
