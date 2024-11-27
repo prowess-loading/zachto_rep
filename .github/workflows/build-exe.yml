@@ -43,7 +43,7 @@ jobs:
                        run_term.py  # Build the .exe with the necessary files
 
       - name: Upload .exe as artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: zachto_built-exe
           path: dist/*
