@@ -1,7 +1,7 @@
 {"Apple iPhone 8": {
   "deviceMetrics": {
   "width": 750,
-  "height": 1334,
+  "height": 2340,
   "pixelRatio": 3.0,
   "touch": true,
   "isiOS": true
@@ -154,7 +154,7 @@
 "Apple iPhone SE": {
   "deviceMetrics": {
   "width": 750,
-  "height": 1334,
+  "height": 2340,
   "pixelRatio": 3.0,
   "touch": true,
   "isiOS": true
@@ -293,7 +293,7 @@
   "model":"SM-S926B/DS",
   "width": 1440,
   "height": 3120,
-  "pixelRatio": 3.0,
+  "pixelRatio": 4.5,
   "touch": true,
   "isiOS": false
   }
@@ -303,7 +303,7 @@
   "model":"SM-S928BZVCINS",
   "width": 1440,
   "height": 3120,
-  "pixelRatio": 3.0,
+  "pixelRatio": 4.5,
   "touch": true,
   "isiOS": false
   }
@@ -343,7 +343,7 @@
   "model":"SM-S918B/DS",
   "width": 1440,
   "height": 3088,
-  "pixelRatio": 3.0,
+  "pixelRatio": 4.0,
   "touch": true,
   "isiOS": false
   }
