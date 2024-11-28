@@ -14,7 +14,6 @@ class BrowserSetup:
         self.browser_deltas = load_config("data/browser_deltas.json")
 
     def setup_browser(self, device_name, browser_name, region="usa"):
-
         device = get_device(self.devices, device_name)
         proxy = get_proxy(self.proxies, region)
 
@@ -23,7 +22,6 @@ class BrowserSetup:
             browser_name = random.choice(SUPPORTED_BROWSERS)
 
         print(f"Browser name: {browser_name}")
-
         if browser_name not in SUPPORTED_BROWSERS:
             raise ValueError(f"Unsupported browser: {browser_name}")
 
@@ -39,5 +37,4 @@ class BrowserSetup:
 
         # Set Window Size
         set_window_size(driver, device, self.browser_deltas, browser_name)
-
         return driver

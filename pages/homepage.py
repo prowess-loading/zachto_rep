@@ -27,13 +27,13 @@ class HomePage:
             "SIPCalculator",
             "SimpleInterestCalculator",
             "HourlySalaryCalculator",
-            # "CarLoanCalculator",              # Not available in the Home page currently
-            # "PricePerSquareFeetCalculator",   # Not available in the Home page currently
-            # "SavingsCalculator",              # Not available in the Home page currently
-            # "MortgageCalculator",             # Not available in the Home page currently
-            # "APYCalculator",                  # Not available in the Home page currently
-            # "CreditCardCalculator",           # Not available in the Home page currently
-            # "SalaryToHourlyCalculator"        # Not available in the Home page currently
+            "CarLoanCalculator",              # Not available in the Home page currently
+            "PricePerSquareFeetCalculator",   # Not available in the Home page currently
+            "SavingsCalculator",              # Not available in the Home page currently
+            "MortgageCalculator",             # Not available in the Home page currently
+            "APYCalculator",                  # Not available in the Home page currently
+            "CreditCardCalculator",           # Not available in the Home page currently
+            "SalaryToHourlyCalculator"        # Not available in the Home page currently
         ]
 
         self.selected_calculator = random.choice(self.calculators)

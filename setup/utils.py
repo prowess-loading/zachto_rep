@@ -41,8 +41,10 @@ def generate_user_agent(device, browser_name):
 
 def adjust_dimensions(device, browser_deltas, browser_name):
     delta = browser_deltas.get(browser_name, {"width": 0, "height": 0})
-    width = device["deviceMetrics"]["width"] + delta["width"]
-    height = device["deviceMetrics"]["height"] + delta["height"]
+    width = round((device["deviceMetrics"]["width"] +
+                  delta["width"]) / device["deviceMetrics"]["pixelRatio"])
+    height = round((device["deviceMetrics"]["height"] +
+                   delta["height"]) / device["deviceMetrics"]["pixelRatio"])
     return width, height
 
 

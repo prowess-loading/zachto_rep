@@ -60,7 +60,8 @@ def main():
 
             selected_calculator = homepage_run.selected_calculator
             try:
-                CalculatorFactory.invoke_calculator(driver, selected_calculator)
+                CalculatorFactory.invoke_calculator(
+                    driver, selected_calculator)
             except Exception as e:
                 print(f"An error occurred while running the calculator: {e}")
 

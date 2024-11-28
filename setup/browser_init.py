@@ -30,8 +30,8 @@ def get_browser_options(browser_name, device, user_agent):
 
 def initialize_driver(browser_name, options, proxy, width, height):
 
-    # seleniumwire_options = {
-    #     "proxy": {"http": proxy, "https": proxy}} if proxy else None
+    seleniumwire_options = {
+        "proxy": {"http": proxy, "https": proxy}} if proxy else None
 
     if browser_name == "safari":
         driver = webdriver.Safari(service=SafariService())
@@ -43,5 +43,5 @@ def initialize_driver(browser_name, options, proxy, width, height):
         "firefox": webdriver.Firefox,
         "edge": webdriver.Edge,
 
-        # }[browser_name](options=options, seleniumwire_options=seleniumwire_options)
-    }[browser_name](options=options)
+    }[browser_name](options=options, seleniumwire_options=seleniumwire_options)
+    # }[browser_name](options=options)

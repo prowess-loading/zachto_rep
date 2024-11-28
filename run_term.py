@@ -15,8 +15,8 @@ def main():
     for i in range(num_terminals):
         if is_windows:
             subprocess.Popen(
-                #  ["cmd", "/c", f"start cmd /c {command}"], shell=True
-                ["cmd", "/c", f"start cmd /k {command}"], shell=True
+                ["cmd", "/c", f"start cmd /c {command}"], shell=True
+                # ["cmd", "/c", f"start cmd /k {command}"], shell=True
             )
         else:
             subprocess.Popen(
