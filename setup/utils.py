@@ -33,7 +33,8 @@ def generate_user_agent(device, browser_name):
     else:
         android_version = random.choice(range(9, 15))
         chrome_version = random.choice(apple_crios_versions)
-        user_agent = f"Mozilla/5.0 (Linux; Android {android_version}; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{chrome_version} Mobile Safari/537.36"
+        model = device["deviceMetrics"]["model"]
+        user_agent = f"Mozilla/5.0 (Linux; Android {android_version}; {model}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{chrome_version} Mobile Safari/537.36"
 
     return user_agent
 
