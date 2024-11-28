@@ -1,5 +1,6 @@
 {
-  "MainPage": "https://loan.anthemico.com/",
+  "MainPage": "",
+  
   "Pages": {
     "AboutUs": "/aboutus.php",
     "ContactUs": "/contactus.php",

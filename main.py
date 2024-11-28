@@ -1,9 +1,13 @@
 import sys
 import json
 import time
+import random
 from setup.browser_setup import BrowserSetup
 from pages.homepage import HomePage
 from setup.calculator_factory import CalculatorFactory
+from data.main_page_utms import urls
+
+url = random.choice(urls)
 
 
 def main():
@@ -48,13 +52,13 @@ def main():
             # Setup the browser
             browser_setup = BrowserSetup()
             driver = browser_setup.setup_browser(
-                device_name="random",  # random
+                # device_name="random",  # random
                 browser_name="random",  # random, chrome, firefox, edge, safari
                 region="usa"            # usa, eu
             )
 
             # Open main page and run calculator
-            driver.get(urls["MainPage"])
+            driver.get(url)
             homepage_run = HomePage(driver)
             homepage_run.open_calculator()
 

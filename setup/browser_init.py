@@ -5,7 +5,9 @@ from selenium.webdriver.safari.service import Service as SafariService
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 
-def get_browser_options(browser_name, device, user_agent):
+def get_browser_options(browser_name,
+                        # device,
+                        user_agent):
 
     options = {
         "chrome": ChromeOptions,
@@ -14,10 +16,11 @@ def get_browser_options(browser_name, device, user_agent):
     }[browser_name]()
 
     if browser_name in ["chrome", "edge"]:
-        options.add_experimental_option("mobileEmulation", {
-            "userAgent": user_agent,
-            "deviceMetrics": device["deviceMetrics"]
-        })
+        # options.add_experimental_option("mobileEmulation", {
+        #     "userAgent": user_agent,
+        #     # "deviceMetrics": device["deviceMetrics"]
+        # })
+        options.add_argument(f'--user-agent={user_agent}')
         options.add_argument("--disable-background-timer-throttling")
         options.add_argument("--disable-backgrounding-occluded-windows")
         options.add_argument("--disable-renderer-backgrounding")
@@ -28,14 +31,16 @@ def get_browser_options(browser_name, device, user_agent):
     return options
 
 
-def initialize_driver(browser_name, options, proxy, width, height):
+def initialize_driver(browser_name, options, proxy,
+                      #   width, height
+                      ):
 
     seleniumwire_options = {
         "proxy": {"http": proxy, "https": proxy}} if proxy else None
 
     if browser_name == "safari":
         driver = webdriver.Safari(service=SafariService())
-        driver.set_window_size(width, height)
+        # driver.set_window_size(width, height)
         return driver
 
     return {

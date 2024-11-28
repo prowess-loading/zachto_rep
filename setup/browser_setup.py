@@ -3,8 +3,10 @@ from setup.config_loader import load_config
 from setup.device_manager import get_device, get_proxy
 from setup.browser_init import get_browser_options, initialize_driver
 from setup.utils import adjust_dimensions, set_window_size, generate_user_agent
-
+from data.agents import desk_agents
 SUPPORTED_BROWSERS = ["chrome", "firefox", "edge"]
+
+ua_desk = random.choice(desk_agents)
 
 
 class BrowserSetup:
@@ -13,8 +15,11 @@ class BrowserSetup:
         self.proxies = load_config("data/proxies.json")
         self.browser_deltas = load_config("data/browser_deltas.json")
 
-    def setup_browser(self, device_name, browser_name, region="usa"):
-        device = get_device(self.devices, device_name)
+    def setup_browser(self,
+                      # device_name,
+                      browser_name,
+                      region="usa"):
+        # device = get_device(self.devices, device_name)
         proxy = get_proxy(self.proxies, region)
 
         # Browser Selection
@@ -26,15 +31,22 @@ class BrowserSetup:
             raise ValueError(f"Unsupported browser: {browser_name}")
 
         # Dimension Adjustment
-        adjusted_width, adjusted_height = adjust_dimensions(
-            device, self.browser_deltas, browser_name)
+        # adjusted_width, adjusted_height = adjust_dimensions(
+        #     device, self.browser_deltas, browser_name)
 
         # Initialize Browser
-        user_agent = generate_user_agent(device, browser_name)
-        options = get_browser_options(browser_name, device, user_agent)
+        # user_agent = generate_user_agent(device, browser_name)
+
+        options = get_browser_options(browser_name,
+                                      #   device,
+                                      ua_desk
+                                      )
+
         driver = initialize_driver(
-            browser_name, options, proxy, adjusted_width, adjusted_height)
+            browser_name, options, proxy,
+            # adjusted_width, adjusted_height
+        )
 
         # Set Window Size
-        set_window_size(driver, device, self.browser_deltas, browser_name)
+        # set_window_size(driver, device, self.browser_deltas, browser_name)
         return driver
