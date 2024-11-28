@@ -9,6 +9,33 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from setup.smooth_scroll import SmoothScroll
 from selenium.common.exceptions import ElementNotInteractableException
+from data.agents_data import ios_versions, apple_crios_versions, apple_fxios_versions, apple_edgios_versions
+
+
+def generate_user_agent(device, browser_name):
+
+    if device["deviceMetrics"]["isiOS"]:
+
+        if browser_name == "chrome":
+            browser_ios_name = "CriOS"
+            browser_version = random.choice(apple_crios_versions)
+        elif browser_name == "firefox":
+            browser_ios_name = "Fxios"
+            browser_version = random.choice(apple_fxios_versions)
+        elif browser_name == "edge":
+            browser_ios_name = "Edgios"
+            browser_version = random.choice(apple_edgios_versions)
+
+        ios_version = random.choice(ios_versions)
+
+        user_agent = f"Mozilla/5.0 (iPhone; CPU iPhone OS {ios_version} like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) {browser_ios_name}/{browser_version} Mobile/15E148 Safari/604.1"
+
+    else:
+        android_version = random.choice(range(9, 15))
+        chrome_version = random.choice(apple_crios_versions)
+        user_agent = f"Mozilla/5.0 (Linux; Android {android_version}; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{chrome_version} Mobile Safari/537.36"
+
+    return user_agent
 
 
 def adjust_dimensions(device, browser_deltas, browser_name):

@@ -2,7 +2,7 @@ import random
 from setup.config_loader import load_config
 from setup.device_manager import get_device, get_proxy
 from setup.browser_init import get_browser_options, initialize_driver
-from setup.utils import adjust_dimensions, set_window_size
+from setup.utils import adjust_dimensions, set_window_size, generate_user_agent
 
 SUPPORTED_BROWSERS = ["chrome", "firefox", "edge"]
 
@@ -32,7 +32,7 @@ class BrowserSetup:
             device, self.browser_deltas, browser_name)
 
         # Initialize Browser
-        user_agent = device.get("userAgent")
+        user_agent = generate_user_agent(device, browser_name)
         options = get_browser_options(browser_name, device, user_agent)
         driver = initialize_driver(
             browser_name, options, proxy, adjusted_width, adjusted_height)
