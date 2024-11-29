@@ -37,9 +37,7 @@ def generate_proxy_with_region(region):
                     regions[key], list) else [regions[key]])
 
     selected_region = random.choice(selected_regions)
-    print(f"Selected region: {selected_region}")
 
-    proxy_string = f"http://user-{proxy_config['username']}-region-{selected_region}:{proxy_config['password']}@{proxy_config['host']}:{proxy_config['port']}"
-    print(f"Proxy: {proxy_string}")
+    proxy_string = f"https://user-{proxy_config['username']}-region-{selected_region}:{proxy_config['password']}@{proxy_config['host']}:{proxy_config['port']}"
 
     return proxy_string

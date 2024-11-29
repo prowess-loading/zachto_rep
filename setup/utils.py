@@ -14,11 +14,14 @@ from data.utms import main_page, utms
 from data.agents_data import ios_versions, apple_crios_versions, apple_fxios_versions, apple_edgios_versions
 
 
-def target_url():
-    base_url = random.choice(main_page)
-    utm_param = random.choice(utms)
+def target_url(add_utm):
+    if add_utm:
+        base_url = random.choice(main_page)
+        utm_param = random.choice(utms)
 
-    return f"{base_url}{utm_param}"
+        return f"{base_url}{utm_param}"
+    else:
+        return random.choice(main_page)
 
 
 def get_mobile_user_agent(device, browser_name):

@@ -4,6 +4,7 @@ from setup.browser_setup import BrowserSetup
 from pages.homepage import HomePage
 from setup.calculator_factory import CalculatorFactory
 from setup import utils
+from selenium.common.exceptions import TimeoutException
 
 
 def main():
@@ -36,6 +37,7 @@ def main():
 
     device_type = "desk"        # desk, mobile
     proxy_active = True         # True, False
+    add_utm = True             # True, False
 
     # Execute tests
     for i in range(1, num_tests + 1):
@@ -55,21 +57,26 @@ def main():
             )
 
             # Open main page and run calculator
-            target_url = utils.target_url()
-            driver.get(target_url)
+            target_url = utils.target_url(add_utm)
+
+            try:
+                driver.get(target_url)
+            except TimeoutException:
+                print("Network timeout occurred, refreshing the page...")
             homepage_run = HomePage(driver)
             homepage_run.open_calculator()
 
             selected_calculator = homepage_run.selected_calculator
             try:
-                elapsed_time = time.time() - start_time
-                if elapsed_time > 180:
-                    print(
-                        f"Quitting current browser...")
-                    driver.quit()
-                    continue
-                CalculatorFactory.invoke_calculator(
-                    driver, selected_calculator)
+                while True:
+                    elapsed_time = time.time() - start_time
+                    if elapsed_time > 180:
+                        print(
+                            f"Quitting current browser...")
+                        driver.quit()
+                        break
+                    CalculatorFactory.invoke_calculator(
+                        driver, selected_calculator)
             except Exception as e:
                 print(f"An error occurred while running the calculator: {e}")
 
