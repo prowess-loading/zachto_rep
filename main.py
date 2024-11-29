@@ -67,16 +67,22 @@ def main():
             homepage_run.open_calculator()
 
             selected_calculator = homepage_run.selected_calculator
+            # try:
+            #     while True:
+            #         elapsed_time = time.time() - start_time
+            #         if elapsed_time > 180:
+            #             print(
+            #                 f"Quitting current browser...")
+            #             driver.quit()
+            #             break
+            #         CalculatorFactory.invoke_calculator(
+            #             driver, selected_calculator)
+            # except Exception as e:
+            #     print(f"An error occurred while running the calculator: {e}")
+
             try:
-                while True:
-                    elapsed_time = time.time() - start_time
-                    if elapsed_time > 180:
-                        print(
-                            f"Quitting current browser...")
-                        driver.quit()
-                        break
-                    CalculatorFactory.invoke_calculator(
-                        driver, selected_calculator)
+                CalculatorFactory.invoke_calculator(
+                    driver, selected_calculator)
             except Exception as e:
                 print(f"An error occurred while running the calculator: {e}")
 
