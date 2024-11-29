@@ -29,6 +29,7 @@
         "KHTML",
         "loanamount",
         "loanbalance",
+        "lunaproxy",
         "monthlypaymentadd",
         "monthlyrepayradio",
         "monthlyreturn",
@@ -60,6 +61,7 @@
         "totalarea",
         "totalprice",
         "useragent",
+        "utms",
         "weekperyear",
         "yearradio",
         "zachto"

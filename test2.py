@@ -1,4 +1,4 @@
-from setup.utils import generate_user_agent
+from setup.utils import get_mobile_user_agent
 from setup.config_loader import load_config
 from setup.device_manager import get_device
 
@@ -8,6 +8,6 @@ devices = load_config("data/new_agents.json")
 
 device = get_device(devices, device_name)
 
-agent = generate_user_agent(device, "chrome")
+agent = get_mobile_user_agent(device, "chrome")
 
 print(agent)

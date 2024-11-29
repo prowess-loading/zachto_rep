@@ -1,18 +1,14 @@
 import sys
-import json
 import time
-import random
 from setup.browser_setup import BrowserSetup
 from pages.homepage import HomePage
 from setup.calculator_factory import CalculatorFactory
-from data.main_page_utms import urls
-
-url = random.choice(urls)
+from setup import utils
 
 
 def main():
-    # Determine how to get the number of tests
-    if len(sys.argv) > 1:  # If arguments are provided, use them
+
+    if len(sys.argv) > 1:
         try:
             num_tests = int(sys.argv[1])
             if num_tests <= 0:
@@ -24,7 +20,7 @@ def main():
         except ValueError:
             print("Please provide a valid number for <num_tests>.")
             return
-    else:  # If no arguments, prompt the user interactively
+    else:
         try:
             num_tests = int(
                 input("How many times do you want to run the test? (Max: 1000): "))
@@ -38,9 +34,8 @@ def main():
             print("Please enter a valid number.")
             return
 
-    # Load URLs
-    with open('data/urls.json', 'r') as f:
-        urls = json.load(f)
+    device_type = "desk"        # desk, mobile
+    proxy_active = True         # True, False
 
     # Execute tests
     for i in range(1, num_tests + 1):
@@ -52,18 +47,27 @@ def main():
             # Setup the browser
             browser_setup = BrowserSetup()
             driver = browser_setup.setup_browser(
-                # device_name="random",  # random
-                browser_name="random",  # random, chrome, firefox, edge, safari
-                region="usa"            # usa, eu
+                device_type,
+                proxy_active,
+                device_name="random",       # random
+                browser_name="random",      # random, chrome, firefox, edge, safari
+                region="us, au, eu"         # rd, us, na, au, as, eu
             )
 
             # Open main page and run calculator
-            driver.get(url)
+            target_url = utils.target_url()
+            driver.get(target_url)
             homepage_run = HomePage(driver)
             homepage_run.open_calculator()
 
             selected_calculator = homepage_run.selected_calculator
             try:
+                elapsed_time = time.time() - start_time
+                if elapsed_time > 180:
+                    print(
+                        f"Quitting current browser...")
+                    driver.quit()
+                    continue
                 CalculatorFactory.invoke_calculator(
                     driver, selected_calculator)
             except Exception as e:
