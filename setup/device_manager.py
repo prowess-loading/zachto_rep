@@ -13,11 +13,3 @@ def get_device(devices, device_name):
         raise ValueError(
             f"Device '{device_name}' not found in the configuration file.")
     return device
-
-
-def get_proxy(proxies, region):
-
-    if region not in proxies:
-        raise ValueError(
-            f"Region '{region}' not found in the proxies configuration file.")
-    return proxies[region]

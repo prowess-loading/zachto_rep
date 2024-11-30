@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from setup.smooth_scroll import SmoothScroll
 from selenium.common.exceptions import ElementNotInteractableException
-from data.agents import desk_agents
+from data.agents_data import desk_agents
 from data.utms import main_page, utms
 from data.agents_data import ios_versions, apple_crios_versions, apple_fxios_versions, apple_edgios_versions
 

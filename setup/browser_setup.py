@@ -1,6 +1,6 @@
 import random
 from setup.config_loader import load_config
-from setup.device_manager import get_device, get_proxy
+from setup.device_manager import get_device
 from setup.browser_init import get_browser_options, initialize_driver
 from setup import utils
 from data import proxies

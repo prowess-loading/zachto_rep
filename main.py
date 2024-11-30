@@ -53,7 +53,7 @@ def main():
                 proxy_active,
                 device_name="random",       # random
                 browser_name="random",      # random, chrome, firefox, edge, safari
-                region="us"                 # rd, us, na, au, as, eu
+                region="us, eu"                 # rd, us, na, au, as, eu
             )
 
             # Open main page and run calculator
